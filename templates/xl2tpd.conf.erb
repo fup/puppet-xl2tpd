@@ -1,0 +1,20 @@
+[global]
+; you cannot leave out listen-addr, causes possible wrong src ip on return packets
+listen-addr = <%= @listen_addr %>
+<% if scope.lookupvar('xl2tpd::params::debug') == true -%>
+debug tunnel = yes
+<% end -%>
+
+[lns default]
+pppoptfile = /etc/ppp/options.xl2tpd
+require chap = yes
+refuse pap = yes
+ip range = <%= @ip_range.join('-') %>
+local ip = <%= @local_ip %>
+assign ip = <%= @assign_ip %>
+require authentication =  <%= @require_authentication %>
+name = <%= @server_name %>
+length bit = <%= @length_bit %>
+<% if scope.lookupvar('xl2tpd::params::debug') == true -%>
+ppp debug = yes
+<% end -%>
