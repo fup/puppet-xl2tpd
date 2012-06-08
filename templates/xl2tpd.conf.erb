@@ -1,5 +1,6 @@
 [global]
 listen-addr = <%= @listen_addr %>
+port = <%= @listen_port %>
 <% if scope.lookupvar('xl2tpd::params::debug') == true -%>
 debug tunnel = yes
 <% end -%>

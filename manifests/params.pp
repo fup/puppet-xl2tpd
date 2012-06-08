@@ -4,6 +4,7 @@ class xl2tpd::params {
   # Global Options
   $debug = false
   $listen_addr = $::ipaddress
+  $listen_port = '1701'
 
   $ppp_options = ['ipcp-accept-local', 'ipcp-accept-remote', 'ms-dns  8.8.8.8', 'noccp',
                   'auth', 'crtscts', 'idle 1800', 'mtu 1200', 'mru 1200', 'nodefaultroute',
