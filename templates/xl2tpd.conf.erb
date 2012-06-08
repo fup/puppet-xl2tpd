@@ -1,5 +1,4 @@
 [global]
-; you cannot leave out listen-addr, causes possible wrong src ip on return packets
 listen-addr = <%= @listen_addr %>
 <% if scope.lookupvar('xl2tpd::params::debug') == true -%>
 debug tunnel = yes
