@@ -7,8 +7,8 @@ debug tunnel = yes
 
 [lns default]
 pppoptfile = /etc/ppp/options.xl2tpd
-require chap = yes
-refuse pap = yes
+refuse chap = yes
+require pap = yes
 ip range = <%= @ip_range.join('-') %>
 local ip = <%= @local_ip %>
 assign ip = <%= @assign_ip %>
