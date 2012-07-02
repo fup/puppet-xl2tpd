@@ -6,9 +6,9 @@ class xl2tpd::params {
   $listen_addr = $::ipaddress
   $listen_port = '1701'
 
-  $ppp_options = ['ipcp-accept-local', 'ipcp-accept-remote', 'ms-dns  8.8.8.8', 'noccp',
-                  'auth', 'crtscts', 'idle 1800', 'mtu 1200', 'mru 1200', 'nodefaultroute',
-                  'debug', 'lock', 'proxyarp', 'connect-delay 5000',
+  $ppp_options = ['lcp-echo-interval 30', 'lcp-echo-failure 4', 'ms-dns  8.8.8.8',
+                  'auth', 'crtscts', 'mtu 1280', 'mru 1280', 'nodefaultroute', 'hide-password',
+                  'debug', 'lock', 'proxyarp', 'connect-delay 5000', 'modem', 'asyncmap 0', 'require-mschap-v2'
                  ]
 
   # lns defaults
